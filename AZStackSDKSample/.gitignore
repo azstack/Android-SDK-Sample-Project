@@ -1,0 +1,14 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+/AzStackSDK.gradle
+/AzStackSDK/local.properties
+/AzStackSDK/.idea/workspace.xml
+/AzStackSDK/.idea/libraries
+/AzStackSDK.DS_Store
+/AzStackSDK/build
+/AzStackSDK/captures
