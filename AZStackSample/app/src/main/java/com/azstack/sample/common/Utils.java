@@ -1,11 +1,5 @@
 package com.azstack.sample.common;
 
-import java.util.List;
-import java.util.regex.Pattern;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -23,6 +17,11 @@ import com.azstack.listener.AzStackContactListener;
 import com.azstack.sample.R;
 import com.azstack.sample.activity.ChatWithActivity;
 import com.azstack.sample.activity.MainActivity;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.regex.Pattern;
 
 public class Utils {
 
@@ -135,38 +134,18 @@ public class Utils {
                 });
 
         azStackClient.registerContactListener(new AzStackContactListener() {
-
             @Override
-            public void getUserInfoForReceiverMessage(String appUserId) {
+            public void getUserInfo(String azStackUserId) {
                 // This code implemention is only for testing purpose
                 // When going into production, you have to implement your own
                 // web service to get your app's user info
-                AzContact user = getUserInfo(appUserId);
-                azStackClient.getUserInfoForReceiverMessageComplete(user);
+                AzContact user = Utils.getUserInfo(azStackUserId);
+                azStackClient.getUserInfoComplete(user);
             }
 
             @Override
-            public void getUserInfoForChatting(String appUserId) {
-                // This code implemention is only for testing purpose
-                // When going into production, you have to implement your own
-                // web service to get your app's user info
-                AzContact user = getUserInfo(appUserId);
-                azStackClient.getUserInfoForChattingComplete(user);
-            }
+            public void viewContactInfo(String s) {
 
-            @Override
-            public List<AzContact> getListFriend() {
-                return null;
-            }
-
-            @Override
-            public void viewContactInfo(String appUserId) {
-
-            }
-
-            @Override
-            public String getPhoneNumberOfContact(String appUserId) {
-                return null;
             }
         });
 
@@ -243,48 +222,28 @@ public class Utils {
                 });
 
         azStackClient.registerContactListener(new AzStackContactListener() {
-
             @Override
-            public void getUserInfoForReceiverMessage(String appUserId) {
+            public void getUserInfo(String azStackUserId) {
                 // This code implemention is only for testing purpose
                 // When going into production, you have to implement your own
                 // web service to get your app's user info
-                AzContact user = getUserInfo(appUserId);
-                azStackClient.getUserInfoForReceiverMessageComplete(user);
+                AzContact user = Utils.getUserInfo(azStackUserId);
+                azStackClient.getUserInfoComplete(user);
             }
 
             @Override
-            public void getUserInfoForChatting(String appUserId) {
-                // This code implemention is only for testing purpose
-                // When going into production, you have to implement your own
-                // web service to get your app's user info
-                AzContact user = getUserInfo(appUserId);
-                azStackClient.getUserInfoForChattingComplete(user);
-            }
+            public void viewContactInfo(String s) {
 
-            @Override
-            public List<AzContact> getListFriend() {
-                return null;
-            }
-
-            @Override
-            public void viewContactInfo(String appUserId) {
-
-            }
-
-            @Override
-            public String getPhoneNumberOfContact(String appUserId) {
-                return null;
             }
         });
 
         azStackClient.connect();
     }
 
-    private static AzContact getUserInfo(String appUserId) {
+    private static AzContact getUserInfo(String azStackUserId) {
         AzContact contact = new AzContact();
-        contact.setName("Luan Nguyen");
-        contact.setAppUserId(appUserId);
+        contact.setName(azStackUserId);
+        contact.setAzStackUserId(azStackUserId);
         return contact;
     }
 }

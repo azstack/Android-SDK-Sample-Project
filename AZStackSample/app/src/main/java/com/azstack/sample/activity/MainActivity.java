@@ -18,7 +18,7 @@ import com.azstack.sample.common.Utils;
 
 public class MainActivity extends Activity implements OnClickListener {
     private ProgressDialog dialog;
-    private EditText txtAppUserId;
+    private EditText txtAzStackUserId;
     private AzStackClient azStackClient;
     private Handler handler = new Handler();
 
@@ -27,12 +27,12 @@ public class MainActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        txtAppUserId = (EditText) findViewById(R.id.txt_app_user_id);
+        txtAzStackUserId = (EditText) findViewById(R.id.txt_azstack_user_id);
         Button btnContinue = (Button) findViewById(R.id.btn_continue);
         btnContinue.setOnClickListener(this);
     }
 
-    private void connect(String appUserId) {
+    private void connect(String azStackUserId) {
         dialog = ProgressDialog.show(this, "", getString(R.string.connecting));
         dialog.setCancelable(false);
         dialog.show();
@@ -43,7 +43,7 @@ public class MainActivity extends Activity implements OnClickListener {
                     azOptions);
         }
 
-        Utils.connectAZStack(azStackClient, this, appUserId, handler, dialog);
+        Utils.connectAZStack(azStackClient, this, azStackUserId, handler, dialog);
     }
 
     @Override
@@ -51,10 +51,10 @@ public class MainActivity extends Activity implements OnClickListener {
         switch (v.getId()) {
             case R.id.btn_continue:
                 Utils.hideKeyboard(this);
-                String appUserId = txtAppUserId.getText().toString().trim()
+                String azStackUserId = txtAzStackUserId.getText().toString().trim()
                         .toLowerCase();
-                if (Utils.isValidUserName(appUserId)) {
-                    connect(appUserId);
+                if (Utils.isValidUserName(azStackUserId)) {
+                    connect(azStackUserId);
                 } else {
                     Toast toast = Toast.makeText(MainActivity.this,
                             getString(R.string.app_user_id_invalid),
