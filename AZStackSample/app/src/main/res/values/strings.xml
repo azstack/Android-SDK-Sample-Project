@@ -17,6 +17,8 @@
     <string name="disconnect_success">Disconnect successfully</string>
     <string name="title_activity_maps">Map</string>
     <string name="choose_friend_from_list">Choose user to chat from the following list</string>
+    <string name="view_conversations">View conversations</string>
+    <string name="or">Or</string>
 
 
 </resources>

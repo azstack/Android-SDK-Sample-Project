@@ -12,13 +12,13 @@ import android.widget.Toast;
 
 import com.azstack.AzOptions;
 import com.azstack.AzStackClient;
-import com.azstack.sample.common.Constants;
 import com.azstack.sample.R;
+import com.azstack.sample.common.Constants;
 import com.azstack.sample.common.Utils;
 
 public class MainActivity extends Activity implements OnClickListener {
     private ProgressDialog dialog;
-    private EditText txtAzStackUserId;
+    private EditText txtAppUserId;
     private AzStackClient azStackClient;
     private Handler handler = new Handler();
 
@@ -27,7 +27,7 @@ public class MainActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        txtAzStackUserId = (EditText) findViewById(R.id.txt_azstack_user_id);
+        txtAppUserId = (EditText) findViewById(R.id.txt_app_user_id);
         Button btnContinue = (Button) findViewById(R.id.btn_continue);
         btnContinue.setOnClickListener(this);
     }
@@ -51,7 +51,7 @@ public class MainActivity extends Activity implements OnClickListener {
         switch (v.getId()) {
             case R.id.btn_continue:
                 Utils.hideKeyboard(this);
-                String azStackUserId = txtAzStackUserId.getText().toString().trim()
+                String azStackUserId = txtAppUserId.getText().toString().trim()
                         .toLowerCase();
                 if (Utils.isValidUserName(azStackUserId)) {
                     connect(azStackUserId);

@@ -9,15 +9,15 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import com.azstack.AzStackClient;
-import com.azstack.database.model.AzContact;
 import com.azstack.exception.AzStackException;
 import com.azstack.listener.AzStackAuthenticateListener;
 import com.azstack.listener.AzStackConnectListener;
-import com.azstack.listener.AzStackContactListener;
+import com.azstack.listener.AzStackUserListener;
 import com.azstack.sample.R;
 import com.azstack.sample.activity.ChatWithActivity;
 import com.azstack.sample.activity.MainActivity;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -133,19 +133,25 @@ public class Utils {
                     }
                 });
 
-        azStackClient.registerContactListener(new AzStackContactListener() {
+        azStackClient.registerUserListener(new AzStackUserListener() {
+
             @Override
-            public void getUserInfo(String azStackUserId) {
+            public void getUserInfo(String azStackUserId, int purpose) {
                 // This code implemention is only for testing purpose
                 // When going into production, you have to implement your own
                 // web service to get your app's user info
-                AzContact user = Utils.getUserInfo(azStackUserId);
-                azStackClient.getUserInfoComplete(user);
+                JSONObject obContact = Utils.getUserInfo(azStackUserId);
+                azStackClient.getUserInfoComplete(obContact, purpose);
             }
 
             @Override
-            public void viewContactInfo(String s) {
+            public void viewUserInfo(String appUserId) {
 
+            }
+
+            @Override
+            public JSONArray getListFriend() {
+                return null;
             }
         });
 
@@ -221,29 +227,40 @@ public class Utils {
                     }
                 });
 
-        azStackClient.registerContactListener(new AzStackContactListener() {
+        azStackClient.registerUserListener(new AzStackUserListener() {
+
             @Override
-            public void getUserInfo(String azStackUserId) {
+            public void getUserInfo(String azStackUserId, int purpose) {
                 // This code implemention is only for testing purpose
                 // When going into production, you have to implement your own
                 // web service to get your app's user info
-                AzContact user = Utils.getUserInfo(azStackUserId);
-                azStackClient.getUserInfoComplete(user);
+                JSONObject obContact = Utils.getUserInfo(azStackUserId);
+                azStackClient.getUserInfoComplete(obContact, purpose);
             }
 
             @Override
-            public void viewContactInfo(String s) {
+            public void viewUserInfo(String azStackUserId) {
 
+            }
+
+            @Override
+            public JSONArray getListFriend() {
+                return null;
             }
         });
 
         azStackClient.connect();
     }
 
-    private static AzContact getUserInfo(String azStackUserId) {
-        AzContact contact = new AzContact();
-        contact.setName(azStackUserId);
-        contact.setAzStackUserId(azStackUserId);
-        return contact;
+    private static JSONObject getUserInfo(String azStackUserId) {
+        JSONObject obContact = new JSONObject();
+        try {
+            obContact.put("azStackUserId", azStackUserId);
+            obContact.put("name", "name-" + azStackUserId);
+            obContact.put("avatar", "");
+        } catch (JSONException ex) {
+            ex.printStackTrace();
+        }
+        return obContact;
     }
 }

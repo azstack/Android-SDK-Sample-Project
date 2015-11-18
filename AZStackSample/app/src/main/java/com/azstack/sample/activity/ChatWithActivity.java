@@ -7,15 +7,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.azstack.AzStackClient;
 import com.azstack.activity.ConversationActivity;
 import com.azstack.sample.R;
 import com.azstack.sample.adapter.UserAdapter;
-import com.azstack.sample.common.Utils;
 import com.azstack.sample.model.User;
 
 import java.util.ArrayList;
@@ -47,6 +44,14 @@ public class ChatWithActivity extends Activity {
                 String name = user.getName();
 
                 AzStackClient.getInstance().startChat(userId, name, "");
+            }
+        });
+
+        Button btnConversations = (Button) findViewById(R.id.btn_conversations);
+        btnConversations.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ChatWithActivity.this, ConversationActivity.class));
             }
         });
     }
