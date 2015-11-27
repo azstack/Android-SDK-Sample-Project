@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.azstack.AzOptions;
 import com.azstack.AzStackClient;
+import com.azstack.AzUI;
 import com.azstack.sample.R;
 import com.azstack.sample.common.Constants;
 import com.azstack.sample.common.Utils;
@@ -42,7 +43,9 @@ public class MainActivity extends Activity implements OnClickListener {
             azStackClient = AzStackClient.newInstance(this, Constants.appId,
                     azOptions);
         }
-
+        AzUI azUI = AzUI.getInstance(this);
+        azUI.setCallEnabled(true);
+        azUI.setHeaderColor(0xff327ad9);
         Utils.connectAZStack(azStackClient, this, azStackUserId, handler, dialog);
     }
 

@@ -151,7 +151,20 @@ public class Utils {
 
             @Override
             public JSONArray getListFriend() {
-                return null;
+                JSONArray jsonArray = new JSONArray();
+                for (int i = 1; i < 10; i++) {
+                    try {
+                        JSONObject user = new JSONObject();
+                        user.put("azStackUserId", "azstack_test" + i);
+                        user.put("name", "User " + i);
+                        user.put("avatar", "");
+                        jsonArray.put(user);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                return jsonArray;
             }
         });
 
@@ -245,7 +258,20 @@ public class Utils {
 
             @Override
             public JSONArray getListFriend() {
-                return null;
+                JSONArray jsonArray = new JSONArray();
+                for (int i = 1; i < 10; i++) {
+                    try {
+                        JSONObject user = new JSONObject();
+                        user.put("azStackUserId", "azstack_test" + i);
+                        user.put("name", "User " + i);
+                        user.put("avatar", "");
+                        jsonArray.put(user);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                return jsonArray;
             }
         });
 
@@ -256,7 +282,7 @@ public class Utils {
         JSONObject obContact = new JSONObject();
         try {
             obContact.put("azStackUserId", azStackUserId);
-            obContact.put("name", "name-" + azStackUserId);
+            obContact.put("name", azStackUserId);
             obContact.put("avatar", "");
         } catch (JSONException ex) {
             ex.printStackTrace();
