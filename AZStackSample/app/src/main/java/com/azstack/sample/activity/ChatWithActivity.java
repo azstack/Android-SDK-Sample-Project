@@ -43,7 +43,7 @@ public class ChatWithActivity extends Activity {
                 String userId = user.getUserId();
                 String name = user.getName();
 
-                AzStackClient.getInstance().startChat(userId, name, "");
+                AzStackClient.getInstance().startChat(ChatWithActivity.this, userId, name, "");
             }
         });
 
