@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.azstack.sample"
-    android:versionCode="1"
-    android:versionName="1.0">
+    package="sample.azstack.azstacksample">
 
     <uses-sdk
         android:minSdkVersion="10"
         android:targetSdkVersion="19" />
 
     <permission
-        android:name="com.azstack.sample.permission.MAPS_RECEIVE"
+        android:name="sample.azstack.azstacksample.permission.MAPS_RECEIVE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
-    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
-    <uses-permission android:name="com.azstack.sample.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="sample.azstack.azstacksample.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -29,155 +27,155 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE" />
 
-    <!-- [START gcm_permission] -->
     <permission
-        android:name="com.azstack.sample.permission.C2D_MESSAGE"
+        android:name="sample.azstack.azstacksample.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.azstack.sample.permission.C2D_MESSAGE" />
+    <uses-permission android:name="sample.azstack.azstacksample.permission.C2D_MESSAGE" />
     <!-- App receives GCM messages. -->
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
     <!-- GCM requires a Google account. -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <!-- Keeps the processor from sleeping when a message is received. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <!-- [END gcm_permission] -->
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
     <application
-        android:name=".MyApplication"
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name">
+        android:name="com.azstack.sample.CusApplication"
+        android:alwaysRetainTaskState="true"
+        android:icon="@drawable/azstack_icon"
+        android:label="@string/app_name"
+        android:largeHeap="true">
+
+        <!-- activity azstack -->
         <activity
-            android:name=".activity.MainActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="adjustResize">
+            android:name="com.azstack.sample.SampleActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.ChatWithActivity"
-            android:label="@string/app_name"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:windowSoftInputMode="adjustResize" />
+
         <activity
             android:name="com.azstack.activity.ChatActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AzStackTheme.Light"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity
             android:name="com.azstack.activity.ChatGroupActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AzStackTheme.Light"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity
             android:name="com.azstack.activity.FreeCallActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
+            android:theme="@style/AzStackTheme.Light"></activity>
+        <activity
+            android:name="com.azstack.activity.CallOutSentActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.IncomingCallActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
+            android:theme="@style/AzStackTheme.Light"></activity>
+        <activity
+            android:name="com.azstack.activity.RecentDetailActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.ViewPhotoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name="com.azstack.activity.ReviewPhotoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
         <activity
             android:name="com.azstack.activity.ConversationActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.GroupListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.GroupInfoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.SendLocationActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.ShowLocationActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.ForwardActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
+            android:theme="@style/AzStackTheme.Light"></activity>
+        <activity
+            android:name="com.azstack.activity.SelectContactChatGroupActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/AzStackTheme.Light"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
         <activity
             android:name="com.azstack.activity.FileExplorerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AzStackTheme.Light"
-            android:windowSoftInputMode="stateHidden|adjustResize" />
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
+            android:name="com.azstack.activity.SelectContactChatActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.GunDrawActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.GunGGalleryActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
+            android:theme="@style/AzStackTheme.Light"></activity>
         <activity
             android:name="com.azstack.activity.GunGDirectoryActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
-        <activity
-            android:name="com.azstack.activity.SelectContactChatGroupActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light" />
-
-        <!-- [START gcm_receiver] -->
-        <receiver
-            android:name="com.google.android.gms.gcm.GcmReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-
-                <category android:name="com.azstack.sample" />
-            </intent-filter>
-        </receiver>
-        <!-- [END gcm_receiver] -->
+            android:theme="@style/AzStackTheme.Light"></activity>
 
 
-        <!-- [START gcm_service] -->
-        <service
-            android:name=".MyGcmListenerService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            </intent-filter>
-        </service>
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyB9srUVqAcbHHAJaeNcMWaHx7bThvYrbq0" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
         <service
             android:name="com.azstack.AzStackInstanceIDListenerService"
             android:exported="false">
@@ -189,13 +187,6 @@
             android:name="com.azstack.RegistrationIntentService"
             android:exported="false" />
         <!-- [END gcm_service] -->
-
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyD9tNZ77JIyKjkjjqTxX4Znr4rGf2YHY6Y" />
-        <meta-data
-            android:name="com.google.android.gms.version"
-            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

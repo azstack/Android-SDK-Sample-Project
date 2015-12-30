@@ -15,12 +15,9 @@
  */
 package com.azstack.sample;
 
-import android.content.Context;
 import android.os.Bundle;
 
 import com.azstack.AzStackClient;
-import com.azstack.sample.common.Constants;
-import com.azstack.sample.common.Utils;
 import com.google.android.gms.gcm.GcmListenerService;
 
 /**
@@ -34,9 +31,9 @@ public class MyGcmListenerService extends GcmListenerService {
         AzStackClient azStackClient = AzStackClient.getInstance();
         if (azStackClient == null) {
             azStackClient = AzStackClient.newInstance(this,
-                    Constants.appId);
+                    Config.app_id, Config.public_key, Config.user_credentials);
         }
-        String appUserId = getSharedPreferences(Constants.PREF_AZSTACK_SAMPlE, Context.MODE_PRIVATE).getString(Constants.PREF_APP_USERID, "");
-        Utils.connectAZStackForGCM(azStackClient, this, appUserId);
+        Utils.connectAZStackForGCM(azStackClient, this);
+        AzStackClient.getInstance().showNotification(this,data);
     }
 }
