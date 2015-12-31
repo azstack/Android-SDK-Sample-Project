@@ -31,7 +31,7 @@ public class MyGcmListenerService extends GcmListenerService {
         AzStackClient azStackClient = AzStackClient.getInstance();
         if (azStackClient == null) {
             azStackClient = AzStackClient.newInstance(this,
-                    Config.app_id, Config.public_key, Config.user_credentials);
+                    Config.app_id, Config.public_key);
         }
         Utils.connectAZStackForGCM(azStackClient, this);
         AzStackClient.getInstance().showNotification(this,data);

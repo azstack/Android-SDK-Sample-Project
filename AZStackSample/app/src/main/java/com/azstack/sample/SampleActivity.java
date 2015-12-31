@@ -59,7 +59,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         //AzStackClient.getInstance().logout();
         vConnect.setVisibility(View.VISIBLE);
         tvConnect.setText(R.string.connecting);
-        AzStackClient.getInstance().connect(Config.my_azstack_userid, Config.my_name);
+        AzStackClient.getInstance().connect(Config.my_azstack_userid,Config.user_credentials, Config.my_name);
     }
 
     @Override
@@ -80,7 +80,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
 
     private void initAzStack() {
         AzOptions azOptions = new AzOptions();
-        AzStackClient.newInstance(getBaseContext(), Config.app_id, Config.public_key, Config.user_credentials, azOptions);
+        AzStackClient.newInstance(getBaseContext(), Config.app_id, Config.public_key, azOptions);
     }
 
     private void initAzstackListener() {
