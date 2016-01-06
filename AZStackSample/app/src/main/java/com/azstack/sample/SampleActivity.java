@@ -72,7 +72,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
             int pos = spFriend.getSelectedItemPosition();
             AzStackClient.getInstance().startCall(SampleActivity.this, Config.listFriendAzStackUserId[pos], Config.listFriendName[pos], null);
         } else if (id == R.id.btn_chat_history) {
-            AzStackClient.getInstance().viewListConversation(SampleActivity.this);
+            AzStackClient.getInstance().viewChatHistory(SampleActivity.this);
         } else if (id == R.id.btn_create_group) {
             AzStackClient.getInstance().createGroup(SampleActivity.this);
         }
