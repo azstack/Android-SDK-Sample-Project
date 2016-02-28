@@ -16,6 +16,8 @@ import com.azstack.listener.AzStackUserListener;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.List;
+
 import sample.azstack.azstacksample.R;
 
 /**
@@ -59,7 +61,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         //AzStackClient.getInstance().logout();
         vConnect.setVisibility(View.VISIBLE);
         tvConnect.setText(R.string.connecting);
-        AzStackClient.getInstance().connect(Config.my_azstack_userid,Config.user_credentials, Config.my_name);
+        AzStackClient.getInstance().connect(Config.my_azstack_userid, Config.user_credentials, Config.my_name);
     }
 
     @Override
@@ -119,12 +121,16 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         //register user
         AzStackClient.getInstance().registerUserListener(new AzStackUserListener() {
             @Override
-            public void getUserInfo(String azStackUserId, int purpose) {
+            public void getUserInfo(List<String> azStackUserIds, int purpose) {
                 try {
-                    JSONObject obContact = new JSONObject();
-                    obContact.put("azStackUserId", azStackUserId);
-                    obContact.put("name", "name_" + azStackUserId);
-                    AzStackClient.getInstance().getUserInfoComplete(obContact, purpose);
+                    JSONArray arrayContact = new JSONArray();
+                    for (String azStackUserId : azStackUserIds) {
+                        JSONObject ob = new JSONObject();
+                        ob.put("azStackUserId", azStackUserId);
+                        ob.put("name", "name_" + azStackUserId);
+                        arrayContact.put(ob);
+                    }
+                    AzStackClient.getInstance().getUserInfoComplete(arrayContact, purpose);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -11,6 +11,8 @@ import com.azstack.listener.AzStackUserListener;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.List;
+
 public class Utils {
     public static void connectAZStackForGCM(final AzStackClient azStackClient,
                                             final Context context) {
@@ -32,12 +34,16 @@ public class Utils {
         });
         AzStackClient.getInstance().registerUserListener(new AzStackUserListener() {
             @Override
-            public void getUserInfo(String azStackUserId, int purpose) {
+            public void getUserInfo(List<String> azStackUserIds, int purpose) {
                 try {
-                    JSONObject ob = new JSONObject();
-                    ob.put("azStackUserId", azStackUserId);
-                    ob.put("name", "name_" + azStackUserId);
-                    AzStackClient.getInstance().getUserInfoComplete(ob, purpose);
+                    JSONArray arrayContact = new JSONArray();
+                    for (String azStackUserId : azStackUserIds) {
+                        JSONObject ob = new JSONObject();
+                        ob.put("azStackUserId", azStackUserId);
+                        ob.put("name", "name_" + azStackUserId);
+                        arrayContact.put(ob);
+                    }
+                    AzStackClient.getInstance().getUserInfoComplete(arrayContact, purpose);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -65,6 +71,6 @@ public class Utils {
             }
         });
 
-        azStackClient.connect(Config.my_azstack_userid,Config.user_credentials, Config.my_name);
+        azStackClient.connect(Config.my_azstack_userid, Config.user_credentials, Config.my_name);
     }
 }

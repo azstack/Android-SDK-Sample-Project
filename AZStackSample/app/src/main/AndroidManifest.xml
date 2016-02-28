@@ -168,6 +168,14 @@
             android:name="com.azstack.activity.GunGDirectoryActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AzStackTheme.Light"></activity>
+        <activity
+            android:name="com.azstack.activity.StickerDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AzStackTheme.Light"></activity>
+        <activity
+            android:name="com.azstack.activity.StickerListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AzStackTheme.Light"></activity>
 
 
         <meta-data
