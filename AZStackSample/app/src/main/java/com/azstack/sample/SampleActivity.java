@@ -8,7 +8,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.azstack.AzOptions;
+import com.azstack.AzStackChatMenuFlag;
 import com.azstack.AzStackClient;
+import com.azstack.AzUI;
 import com.azstack.exception.AzStackException;
 import com.azstack.listener.AzStackConnectListener;
 import com.azstack.listener.AzStackUserListener;
