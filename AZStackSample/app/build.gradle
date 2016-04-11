@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "sample.azstack.azstacksample"
-        minSdkVersion 9
+        minSdkVersion 10
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -30,7 +30,10 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile(name: 'AZStackSDK-2.2.0', ext: 'aar')
+    compile(name: 'AZStackSDK-2.2.1', ext: 'aar')
     compile 'com.android.support:multidex:1.0.1'
-    compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.google.android.gms:play-services-maps:8.4.0'
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
+    compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile 'com.google.android.gms:play-services-plus:8.4.0'
 }
