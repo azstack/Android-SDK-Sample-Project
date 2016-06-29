@@ -3,7 +3,7 @@
     package="sample.azstack.azstacksample">
 
     <uses-sdk
-        android:minSdkVersion="9"
+        android:minSdkVersion="15"
         android:targetSdkVersion="23" />
 
     <permission
@@ -23,7 +23,6 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -69,105 +68,91 @@
             </intent-filter>
         </activity>
 
+        <!-- AZStack activities-->
+
         <activity
             android:name="com.azstack.activity.ChatActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AzStackTheme.Light"
-            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.azstack.activity.ChatGroupActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:theme="@style/AzStackTheme.Light"
-            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
-            android:name="com.azstack.activity.FreeCallActivity"
+            android:name="com.azstack.activity.CallFromActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@style/AzStackTheme.Light" />
         <activity
-            android:name="com.azstack.activity.CallOutSentActivity"
+            android:name="com.azstack.activity.CallToActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@style/AzStackTheme.Light" />
         <activity
-            android:name="com.azstack.activity.IncomingCallActivity"
+            android:name="com.azstack.activity.ViewPagerPhotoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
-        <activity
-            android:name="com.azstack.activity.RecentDetailActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
-        <activity
-            android:name="com.azstack.activity.ViewPhotoActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="com.azstack.activity.ReviewPhotoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
             android:name="com.azstack.activity.ConversationActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@style/AzStackTheme.Light" />
         <activity
             android:name="com.azstack.activity.GroupListActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@style/AzStackTheme.Light" />
         <activity
             android:name="com.azstack.activity.GroupInfoActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@style/AzStackTheme.Light" />
         <activity
             android:name="com.azstack.activity.SendLocationActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@style/AzStackTheme.Light" />
         <activity
             android:name="com.azstack.activity.ShowLocationActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@style/AzStackTheme.Light" />
         <activity
             android:name="com.azstack.activity.ForwardActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
-        <activity
-            android:name="com.azstack.activity.SelectContactChatGroupActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"
-            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+            android:theme="@style/AzStackTheme.Light" />
         <activity
             android:name="com.azstack.activity.FileExplorerActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/AzStackTheme.Light"
-            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
-        <activity
-            android:name="com.azstack.activity.SelectContactChatActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity
             android:name="com.azstack.activity.GunDrawActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.azstack.activity.GunGGalleryActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@style/AzStackTheme.Light" />
         <activity
             android:name="com.azstack.activity.GunGDirectoryActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AzStackTheme.Light"></activity>
+            android:theme="@style/AzStackTheme.Light" />
+        <activity
+            android:name="com.azstack.activity.SelectContactChatGroupActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AzStackTheme.Light" />
         <activity
             android:name="com.azstack.activity.StickerDetailActivity"
             android:screenOrientation="portrait"
@@ -177,6 +162,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/AzStackTheme.Light"></activity>
 
+        <!-- AZStack activities-->
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"

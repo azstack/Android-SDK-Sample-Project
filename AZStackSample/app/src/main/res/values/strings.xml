@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AzStackSDKSample</string>
+    <string name="app_name">AZStackSample</string>
     <string name="connected">Connected</string>
     <string name="connecting">Connecting...</string>
     <string name="chat_1_1">Chat 1-1</string>
@@ -9,6 +9,7 @@
     <string name="chat_history">Chat history</string>
     <string name="create_group">Create group</string>
     <string name="select_user_for_chat">Select friend user for chat</string>
+    <string name="video_call">Video call</string>
 
     <array name="list_friend_name">
         <item>User 1</item>

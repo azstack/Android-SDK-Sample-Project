@@ -27,7 +27,7 @@ import sample.azstack.azstacksample.R;
  */
 public class SampleActivity extends AppCompatActivity implements View.OnClickListener {
     private Spinner spFriend;
-    private Button btnChat11, btnCall, btnChatHistory, btnChatGroup;
+    private Button btnChat11, btnCall, btnChatHistory, btnChatGroup, btnVideoCall;
     private View vConnect;
     private TextView tvConnect;
 
@@ -42,6 +42,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         btnCall = (Button) findViewById(R.id.btn_call);
         btnChatHistory = (Button) findViewById(R.id.btn_chat_history);
         btnChatGroup = (Button) findViewById(R.id.btn_create_group);
+        btnVideoCall = (Button) findViewById(R.id.btn_video_call);
 
         vConnect = findViewById(R.id.v_connect);
         tvConnect = (TextView) findViewById(R.id.tv_no_connection);
@@ -51,6 +52,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         btnCall.setOnClickListener(this);
         btnChatHistory.setOnClickListener(this);
         btnChatGroup.setOnClickListener(this);
+        btnVideoCall.setOnClickListener(this);
 
         //init azstack
         initAzStack();
@@ -79,6 +81,9 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
             AzStackClient.getInstance().viewChatHistory(SampleActivity.this);
         } else if (id == R.id.btn_create_group) {
             AzStackClient.getInstance().createGroup(SampleActivity.this);
+        } else if (id == R.id.btn_video_call) {
+            int pos = spFriend.getSelectedItemPosition();
+            AzStackClient.getInstance().startVideoCall(SampleActivity.this, Config.listFriendAzStackUserId[pos], Config.listFriendName[pos], null);
         }
     }
 
@@ -105,6 +110,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                                 btnCall.setEnabled(true);
                                 btnChatHistory.setEnabled(true);
                                 btnChatGroup.setEnabled(true);
+                                btnVideoCall.setEnabled(true);
                             }
                         }, 800);
                     }
