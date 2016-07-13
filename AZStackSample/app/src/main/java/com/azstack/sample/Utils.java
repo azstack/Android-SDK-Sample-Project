@@ -29,7 +29,7 @@ public class Utils {
 
             @Override
             public void onConnectionError(AzStackClient client, AzStackException e) {
-                Log.i("AzStack", "onConnectionError");
+                Log.i("AzStack", e.toString());
             }
         });
         AzStackClient.getInstance().registerUserListener(new AzStackUserListener() {

@@ -1,0 +1,61 @@
+{
+  "project_info": {
+    "project_number": "1002287040055",
+    "project_id": "myapplication-1239"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002287040055:android:db6bdabc75b2bb74",
+        "android_client_info": {
+          "package_name": "sample.azstack.azstacksample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq5K53CmilOkG5eR5fyamyRghWXk5gNcY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002287040055:android:4eaedc482f791a7d",
+        "android_client_info": {
+          "package_name": "com.azstack.sample"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq5K53CmilOkG5eR5fyamyRghWXk5gNcY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

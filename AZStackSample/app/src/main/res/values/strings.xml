@@ -10,6 +10,7 @@
     <string name="create_group">Create group</string>
     <string name="select_user_for_chat">Select friend user for chat</string>
     <string name="video_call">Video call</string>
+    <string name="no_connection">No connection</string>
 
     <array name="list_friend_name">
         <item>User 1</item>

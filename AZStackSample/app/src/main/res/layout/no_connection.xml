@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="30dp"
-    android:background="@color/azstack_orange"
+    android:background="#FFA200"
     android:gravity="center"
     android:minHeight="30dp">
 
@@ -18,8 +18,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="5dp"
-        android:text="@string/azstack_no_connection"
-        android:textColor="@color/azstack_white"
+        android:text="@string/no_connection"
+        android:textColor="#ffffff"
         android:textSize="14sp" />
 
 </LinearLayout><!-- From: file:/D:/project/AZStack/azstack-android-studio/AzStackSDK/src/main/res/layout/azstack_no_connection.xml -->

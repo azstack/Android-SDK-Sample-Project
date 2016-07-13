@@ -8,9 +8,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.azstack.AzOptions;
-import com.azstack.AzStackChatMenuFlag;
 import com.azstack.AzStackClient;
-import com.azstack.AzUI;
 import com.azstack.exception.AzStackException;
 import com.azstack.listener.AzStackConnectListener;
 import com.azstack.listener.AzStackUserListener;
@@ -19,8 +17,6 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.List;
-
-import sample.azstack.azstacksample.R;
 
 /**
  * Created by tantn on 12/25/2015.
@@ -89,6 +85,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
 
     private void initAzStack() {
         AzOptions azOptions = new AzOptions();
+        azOptions.setGoogleCloudMessagingId(Config.SENDER_ID);
         AzStackClient.newInstance(getBaseContext(), Config.app_id, Config.public_key, azOptions);
     }
 
@@ -123,6 +120,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
 
             @Override
             public void onConnectionError(AzStackClient client, AzStackException e) {
+                System.out.println("================ error: " + e.toString());
             }
         });
 
