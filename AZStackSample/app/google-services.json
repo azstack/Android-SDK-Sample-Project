@@ -1,46 +1,27 @@
 {
   "project_info": {
-    "project_number": "1002287040055",
-    "project_id": "myapplication-1239"
+    "project_number": "814960865292",
+    "firebase_url": "https://azstacksample-7cd1c.firebaseio.com",
+    "project_id": "azstacksample-7cd1c",
+    "storage_bucket": "azstacksample-7cd1c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1002287040055:android:db6bdabc75b2bb74",
-        "android_client_info": {
-          "package_name": "sample.azstack.azstacksample"
-        }
-      },
-      "oauth_client": [],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAq5K53CmilOkG5eR5fyamyRghWXk5gNcY"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 1
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1002287040055:android:4eaedc482f791a7d",
+        "mobilesdk_app_id": "1:814960865292:android:4eaedc482f791a7d",
         "android_client_info": {
           "package_name": "com.azstack.sample"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "814960865292-3tmppdov18osfc8job5eq44jua5p9jtq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": "AIzaSyAq5K53CmilOkG5eR5fyamyRghWXk5gNcY"
+          "current_key": "AIzaSyCxWzPZYkvk6yI94QRxXyfENx-3EN5PB7M"
         }
       ],
       "services": {
@@ -52,7 +33,7 @@
           "other_platform_oauth_client": []
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }
