@@ -94,6 +94,7 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
         AzStackClient.getInstance().registerConnectionListenter(new AzStackConnectListener() {
             @Override
             public void onConnectionConnected(AzStackClient client) {
+                System.out.println("================ connected");
                 vConnect.post(new Runnable() {
                     @Override
                     public void run() {
