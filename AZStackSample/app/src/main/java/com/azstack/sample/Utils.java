@@ -7,6 +7,7 @@ import com.azstack.AzStackClient;
 import com.azstack.exception.AzStackException;
 import com.azstack.listener.AzStackConnectListener;
 import com.azstack.listener.AzStackUserListener;
+import com.azstack.listener.AzStackUserPageListener;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

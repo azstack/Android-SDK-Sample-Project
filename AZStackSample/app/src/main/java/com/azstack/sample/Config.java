@@ -15,8 +15,8 @@ public class Config {
                     "/mwEMTfA0yPUZ7LiywoZwIDAQAB";
     public static final String user_credentials = "";
 
-    public static final String my_azstack_userid = "user1";
-    public static final String my_name = "User 1";
+    public static final String my_azstack_userid = "azstack";
+    public static final String my_name = "AZStack";
     public static final String SENDER_ID = "814960865292";
 
     public static String[] listFriendName = {"User 1", "User 2", "User 3", "User 4", "User 5",

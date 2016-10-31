@@ -12,6 +12,7 @@ import com.azstack.AzStackClient;
 import com.azstack.exception.AzStackException;
 import com.azstack.listener.AzStackConnectListener;
 import com.azstack.listener.AzStackUserListener;
+import com.azstack.listener.AzStackUserPageListener;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -161,6 +162,32 @@ public class SampleActivity extends AppCompatActivity implements View.OnClickLis
                     e.printStackTrace();
                 }
                 return arrayContact;
+            }
+        });
+
+        AzStackClient.getInstance().registerUserPageListener(new AzStackUserPageListener() {
+            @Override
+            public void getListFriendPage(final int page) {
+                int done = 1;
+                JSONArray arrayContact = new JSONArray();
+                try {
+                    for (int i = 0; i < Config.listFriendAzStackUserId.length; i++) {
+                        JSONObject obContact = new JSONObject();
+                        obContact.put("azStackUserId", Config.listFriendAzStackUserId[i]);
+                        obContact.put("name", Config.listFriendName[i]);
+                        obContact.put("avatar", "");
+                        arrayContact.put(obContact);
+                    }
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                AzStackClient.getInstance().getListFriendPageComplete(arrayContact, done);
+            }
+
+            @Override
+            public void searchListFriendPage(final int page, final String name, final String position) {
             }
         });
     }
