@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion '25.0.0'
 
     defaultConfig {
         applicationId "com.azstack.sample"
@@ -30,7 +30,7 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile(name: 'AZStackSDK-3.2.2', ext: 'aar')
+    compile(name: 'AZStackSDK-3.2.3', ext: 'aar')
     compile 'com.android.support:multidex:1.0.1'
     compile 'com.google.android.gms:play-services-maps:9.4.0'
     compile 'com.google.android.gms:play-services-gcm:9.4.0'
