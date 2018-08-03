@@ -3,8 +3,8 @@
     package="com.azstack.sample">
 
     <uses-sdk
-        android:minSdkVersion="15"
-        android:targetSdkVersion="23" />
+        android:minSdkVersion="16"
+        android:targetSdkVersion="27" />
 
     <permission
         android:name="com.azstack.sample.permission.MAPS_RECEIVE"
