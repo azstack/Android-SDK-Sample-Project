@@ -197,6 +197,16 @@
             android:name="com.azstack.RegistrationIntentService"
             android:exported="false" />
         <!-- [END gcm_service] -->
+        
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.azstack.sample.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
     </application>
 
 </manifest>
